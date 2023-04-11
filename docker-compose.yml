@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  web-client:
+    container_name: web-client
+    build: ./packages/web-client/
+    ports:
+      - '3000:3000'
+    env_file:
+      - ./packages/web-client/.env
+    # depends_on:
+    #   - api-server
+    volumes:
+      - ./packages/web-client/:/user/src/app
+      - /user/src/app/node_modules
+
+  # api-server:
+  #   container_name: api-server
+  #   restart: always
+  #   build: ./packages/api-server/
+  #   ports:
+  #     - '4000:4000'
+  #   env_file:
+  #     - ./packages/api-server/.env
+  #   volumes:
+  #     - ./:/user/src/app

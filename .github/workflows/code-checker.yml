@@ -1,0 +1,21 @@
+name: Booklab Code Checker
+on:
+  - pull_request
+  - push
+
+jobs:
+  monorepos:
+    name: Monorepo Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Project Dependencies ✅
+        run: yarn workspace:setup
+
+      - name: Run Test 🧪
+        run: yarn test
+
+      # - name: Run Build ⚙️
+      #   run: yarn build

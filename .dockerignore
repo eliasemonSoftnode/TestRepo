@@ -1,0 +1,17 @@
+.github
+.husky
+.git
+.vscode
+.dockerignore
+.gitignore
+.env
+config
+build
+docker-compose.yaml
+Dockerfile
+README.md
+**/.git
+**/node_modules
+packages/**/node_modules
+packages/**/dist
+packages/**/build
